@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>草津温泉 — 少林寺拳法部 追いコン 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-body">
+
+<!-- ═══════════════════════════════════════
+     ナビゲーション
+════════════════════════════════════════ -->
+<nav class="site-nav">
+  <div class="nav-logo">
+    少林寺拳法部
+    <span>追いコン 2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="kusatsu.html">草津温泉</a>
+    <a href="karuizawa.html">軽井沢</a>
+    <a href="lodging.html">宿舎</a>
+    <a href="cars.html">配車</a>
+    <a href="info.html">Info</a>
+  </div>
+  <button class="nav-hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile">
+  <a href="index.html">🏠 Home</a>
+  <a href="kusatsu.html">♨️ 草津温泉</a>
+  <a href="karuizawa.html">🌿 軽井沢</a>
+  <a href="lodging.html">🏡 宿舎</a>
+  <a href="cars.html">🚗 配車</a>
+  <a href="info.html">ℹ️ Info</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ページヒーロー（メイン画像）
+════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="img-edit-wrapper" style="position:absolute;inset:0;">
+    <div class="page-hero-bg" id="kusatsu-hero-bg" data-bg-id="kusatsu_hero"
+         style="background-image:url('images/kusatsu/hero.jpg')"></div>
+    <button class="img-change-btn" data-target-id="kusatsu_hero" data-is-bg="true">
+      📷 メイン画像を変更
+    </button>
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <span class="page-hero-eyebrow editable" contenteditable="false">Day 1 — Kusatsu Onsen</span>
+    <h1 class="page-hero-title">
+      <span class="editable" contenteditable="false">♨️ 草津温泉</span>
+    </h1>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     地図画像
+════════════════════════════════════════ -->
+<div class="map-section fade-in">
+  <p class="map-section-title">草津温泉 エリアマップ</p>
+  <div class="map-img-wrapper img-edit-wrapper">
+    <img src="images/kusatsu/map.jpg" alt="草津温泉 地図" id="kusatsu-map" class="img-placeholder">
+    <button class="img-change-btn" data-target-id="kusatsu-map" data-is-bg="false">
+      📷 地図画像を変更
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     観光地カード
+════════════════════════════════════════ -->
+<div class="cards-section">
+
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Sightseeing</span>
+    <h2 class="section-title editable" contenteditable="false">草津温泉 観光スポット</h2>
+    <div class="section-divider"></div>
+    <p style="margin-top:0.8rem;font-size:0.88rem;color:var(--color-text-light);" class="editable" contenteditable="false">
+      日本三名泉の一つ、草津温泉のおすすめスポットを紹介します。
+    </p>
+  </div>
+
+  <!-- ─── カテゴリ：定番スポット ─── -->
+  <div class="category-header fade-in">
+    <h3 class="category-title">定番スポット</h3>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- カード 1: 湯畑 -->
+    <div class="card fade-in" data-href="https://www.kusatsu-onsen.ne.jp/onsen/yubatake.html">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/kusatsu/yubatake.jpg" alt="湯畑" id="kusatsu-img-01" class="img-placeholder">
+        <span class="card-badge editable" contenteditable="false">無料</span>
+        <button class="img-change-btn" data-target-id="kusatsu-img-01" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">湯畑</h3>
+        <p class="card-desc editable" contenteditable="false">草津温泉のシンボル。毎分4,000リットル以上の温泉が湧き出す圧倒的な景観。夜はライトアップされ幻想的な雰囲気に。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">無料（見学自由）</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">24時間</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード 2: 西の河原公園 -->
+    <div class="card fade-in" data-href="https://www.kusatsu-onsen.ne.jp/kankou/detail/4">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/kusatsu/sainokawara.jpg" alt="西の河原公園" id="kusatsu-img-02" class="img-placeholder">
+        <span class="card-badge editable" contenteditable="false">無料</span>
+        <button class="img-change-btn" data-target-id="kusatsu-img-02" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">西の河原公園</h3>
+        <p class="card-desc editable" contenteditable="false">温泉が湧き出す幻想的な庭園公園。随所から源泉が湧き出し、硫黄の香りと共に非日常の空間が広がります。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">無料（露天風呂は有料）</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">7:00〜21:00（露天風呂）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード 3: 草津熱帯圏 -->
+    <div class="card fade-in" data-href="https://www.kusatsu-nettaiken.com/">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/kusatsu/nettaiken.jpg" alt="草津熱帯圏" id="kusatsu-img-03" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="kusatsu-img-03" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">草津熱帯圏</h3>
+        <p class="card-desc editable" contenteditable="false">温泉熱を利用した日本唯一の温泉熱帯施設。ワニ、カピバラ、ジャガーなど珍しい動物が生息しています。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">大人 820円</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">8:30〜17:30</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cards-grid 定番 -->
+
+  <!-- ─── カテゴリ：温泉・体験 ─── -->
+  <div class="category-header fade-in">
+    <h3 class="category-title">温泉・体験</h3>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- カード 4: 西の河原露天風呂 -->
+    <div class="card fade-in" data-href="https://www.kusatsu-onsen.ne.jp/kankou/detail/5">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/kusatsu/rotenburo.jpg" alt="西の河原露天風呂" id="kusatsu-img-04" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="kusatsu-img-04" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">西の河原露天風呂</h3>
+        <p class="card-desc editable" contenteditable="false">500㎡の広大な露天風呂。草津源泉かけ流しの良質な湯を大自然の中で楽しめます。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">大人 600円</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">7:00〜20:00（季節により変動）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード 5: 湯もみと踊り -->
+    <div class="card fade-in" data-href="https://www.kusatsu-onsen.ne.jp/kankou/detail/6">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/kusatsu/yumomi.jpg" alt="湯もみと踊り" id="kusatsu-img-05" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="kusatsu-img-05" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">湯もみと踊り</h3>
+        <p class="card-desc editable" contenteditable="false">草津独自の入浴法「湯もみ」の実演ショー。民謡に合わせて行われる伝統文化を体験できます。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">大人 700円</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">1日6回公演</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード 6: 共同浴場 白旗の湯 -->
+    <div class="card fade-in" data-href="https://www.kusatsu-onsen.ne.jp/kankou/detail/7">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/kusatsu/shirahatanoyu.jpg" alt="白旗の湯" id="kusatsu-img-06" class="img-placeholder">
+        <span class="card-badge editable" contenteditable="false">無料</span>
+        <button class="img-change-btn" data-target-id="kusatsu-img-06" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">共同浴場 白旗の湯</h3>
+        <p class="card-desc editable" contenteditable="false">源頼朝が発見したという伝説の湯。地元の人も愛用する昔ながらの共同浴場。草津最古の湯とも言われています。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">無料</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">5:00〜23:00</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cards-grid 温泉 -->
+
+</div><!-- /cards-section -->
+
+<!-- ═══════════════════════════════════════
+     フッター
+════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-logo editable" contenteditable="false">少林寺拳法部</div>
+  <div class="footer-sub editable" contenteditable="false">追い出しコンパ 2026 — 草津温泉 &amp; 軽井沢</div>
+  <button class="footer-login-btn">🔒 Login</button>
+  <p class="footer-copyright">© 2026 Shorinji Kempo Club. All rights reserved.</p>
+</footer>
+
+<!-- ログインモーダル -->
+<div class="modal-overlay">
+  <div class="modal-box">
+    <h2 class="modal-title">🔐 管理者ログイン</h2>
+    <p class="modal-sub">パスワードを入力してください</p>
+    <input type="password" class="modal-input" placeholder="パスワード">
+    <button class="modal-submit">ログイン</button>
+    <p class="modal-error"></p>
+    <p class="modal-close">キャンセル</p>
+  </div>
+</div>
+
+<div class="edit-bar">
+  <span class="edit-bar-label">✎ 編集モード</span>
+  <button class="edit-btn primary" id="save-btn">💾 保存</button>
+  <button class="edit-btn" id="clear-btn">🗑 リセット</button>
+  <button class="edit-btn danger" id="logout-btn">ログアウト</button>
+</div>
+
+<div class="text-toolbar" id="text-toolbar">
+  <select id="tb-font" title="フォント">
+    <option value="'Noto Sans JP', sans-serif">ゴシック</option>
+    <option value="'Shippori Mincho', serif">明朝</option>
+    <option value="'Cormorant Garamond', serif">英字Serif</option>
+    <option value="Georgia, serif">Georgia</option>
+  </select>
+  <input type="number" id="tb-size" min="8" max="80" value="16" title="文字サイズ(px)">
+  <input type="color" id="tb-color" value="#2d2d2d" title="文字色">
+  <button class="edit-btn" id="tb-bold"><b>B</b></button>
+  <button class="edit-btn" id="tb-italic"><i>I</i></button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>

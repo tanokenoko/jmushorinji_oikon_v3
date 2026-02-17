@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配車 — 少林寺拳法部 追いコン 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 配車ページ固有スタイル */
+    .cars-page-intro {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2d4a2d 100%);
+      color: var(--color-white);
+      padding: var(--gap-lg) var(--gap-md);
+      margin-top: 64px;
+      text-align: center;
+    }
+    .cars-page-intro .section-eyebrow { color: var(--color-gold); }
+    .cars-page-intro .section-title   { color: var(--color-white); }
+    .cars-page-notice {
+      background: var(--color-cream);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-gold);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      margin-bottom: var(--gap-lg);
+      font-size: 0.88rem;
+      color: var(--color-text-light);
+      line-height: 1.8;
+    }
+    /* 車番号大文字装飾 */
+    .car-number { font-size: 2.5rem; }
+
+    /* メンバー追加ボタン（編集モード時のみ表示） */
+    .add-member-btn {
+      display: none;
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--color-accent-dark);
+      background: rgba(122,158,94,0.08);
+      border: 1px dashed var(--color-accent);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+      font-family: var(--font-sans);
+    }
+    .add-member-btn:hover { background: rgba(122,158,94,0.15); }
+    .edit-mode-on .add-member-btn { display: block; }
+
+    /* メンバー削除ボタン */
+    .del-member-btn {
+      display: none;
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: #cc4444;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 0.3rem;
+      flex-shrink: 0;
+    }
+    .edit-mode-on .del-member-btn { display: block; }
+
+    /* 車名編集アイコン */
+    .car-name-edit-hint {
+      display: none;
+      font-size: 0.65rem;
+      color: var(--color-gold);
+      margin-left: 0.3rem;
+    }
+    .edit-mode-on .car-name-edit-hint { display: inline; }
+  </style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<nav class="site-nav">
+  <div class="nav-logo">
+    少林寺拳法部
+    <span>追いコン 2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="kusatsu.html">草津温泉</a>
+    <a href="karuizawa.html">軽井沢</a>
+    <a href="lodging.html">宿舎</a>
+    <a href="cars.html">配車</a>
+    <a href="info.html">Info</a>
+  </div>
+  <button class="nav-hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile">
+  <a href="index.html">🏠 Home</a>
+  <a href="kusatsu.html">♨️ 草津温泉</a>
+  <a href="karuizawa.html">🌿 軽井沢</a>
+  <a href="lodging.html">🏡 宿舎</a>
+  <a href="cars.html">🚗 配車</a>
+  <a href="info.html">ℹ️ Info</a>
+</div>
+
+<!-- ページヘッダー -->
+<div class="cars-page-intro">
+  <span class="section-eyebrow">Car Assignment</span>
+  <h1 class="section-title" style="margin-top:0.5rem;">🚗 配車表</h1>
+  <p style="margin-top:0.8rem;font-size:0.88rem;color:rgba(247,244,238,0.7);letter-spacing:0.06em;" class="editable" contenteditable="false">
+    1号車〜5号車の乗車メンバーです。時間厳守で集合してください！
+  </p>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="section">
+
+  <!-- 注意書き -->
+  <div class="cars-page-notice fade-in editable" contenteditable="false">
+    🕐 集合時間：<strong>〇〇 AM 8:00</strong>｜集合場所：<strong>大学 〇〇前</strong><br>
+    ⚠️ 遅刻した場合は連絡してください。先に出発する場合があります。<br>
+    🚗 ドライバーの方は前日に必ず休養をとり、安全運転でお願いします。
+  </div>
+
+  <!-- 配車グリッド -->
+  <div class="cars-grid">
+
+    <!-- ─── 1号車 ─── -->
+    <div class="car-card fade-in" id="car-01">
+      <div class="car-card-header">
+        <div class="car-number">01</div>
+        <div class="car-title-block">
+          <div class="car-name editable" contenteditable="false">〇〇の車</div>
+          <div class="car-driver-label">🚗 ドライバー: <span class="editable" contenteditable="false">〇〇さん</span></div>
+        </div>
+      </div>
+      <div class="car-card-body">
+        <p class="car-members-title">乗車メンバー</p>
+        <div class="car-members-list">
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（4年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（3年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（2年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（1年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+        </div>
+        <button class="add-member-btn" onclick="addMember(this)">＋ メンバーを追加</button>
+      </div>
+    </div>
+
+    <!-- ─── 2号車 ─── -->
+    <div class="car-card fade-in" id="car-02">
+      <div class="car-card-header">
+        <div class="car-number">02</div>
+        <div class="car-title-block">
+          <div class="car-name editable" contenteditable="false">〇〇の車</div>
+          <div class="car-driver-label">🚗 ドライバー: <span class="editable" contenteditable="false">〇〇さん</span></div>
+        </div>
+      </div>
+      <div class="car-card-body">
+        <p class="car-members-title">乗車メンバー</p>
+        <div class="car-members-list">
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（4年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（3年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（2年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（1年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+        </div>
+        <button class="add-member-btn" onclick="addMember(this)">＋ メンバーを追加</button>
+      </div>
+    </div>
+
+    <!-- ─── 3号車 ─── -->
+    <div class="car-card fade-in" id="car-03">
+      <div class="car-card-header">
+        <div class="car-number">03</div>
+        <div class="car-title-block">
+          <div class="car-name editable" contenteditable="false">〇〇の車</div>
+          <div class="car-driver-label">🚗 ドライバー: <span class="editable" contenteditable="false">〇〇さん</span></div>
+        </div>
+      </div>
+      <div class="car-card-body">
+        <p class="car-members-title">乗車メンバー</p>
+        <div class="car-members-list">
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（4年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（3年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（2年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+        </div>
+        <button class="add-member-btn" onclick="addMember(this)">＋ メンバーを追加</button>
+      </div>
+    </div>
+
+    <!-- ─── 4号車 ─── -->
+    <div class="car-card fade-in" id="car-04">
+      <div class="car-card-header">
+        <div class="car-number">04</div>
+        <div class="car-title-block">
+          <div class="car-name editable" contenteditable="false">〇〇の車</div>
+          <div class="car-driver-label">🚗 ドライバー: <span class="editable" contenteditable="false">〇〇さん</span></div>
+        </div>
+      </div>
+      <div class="car-card-body">
+        <p class="car-members-title">乗車メンバー</p>
+        <div class="car-members-list">
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（4年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（3年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（2年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（1年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+        </div>
+        <button class="add-member-btn" onclick="addMember(this)">＋ メンバーを追加</button>
+      </div>
+    </div>
+
+    <!-- ─── 5号車 ─── -->
+    <div class="car-card fade-in" id="car-05">
+      <div class="car-card-header">
+        <div class="car-number">05</div>
+        <div class="car-title-block">
+          <div class="car-name editable" contenteditable="false">〇〇の車</div>
+          <div class="car-driver-label">🚗 ドライバー: <span class="editable" contenteditable="false">〇〇さん</span></div>
+        </div>
+      </div>
+      <div class="car-card-body">
+        <p class="car-members-title">乗車メンバー</p>
+        <div class="car-members-list">
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（4年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（3年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+          <div class="car-member">
+            <span class="car-member-icon">▶</span>
+            <span class="member-name editable" contenteditable="false">〇〇（2年）</span>
+            <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+          </div>
+        </div>
+        <button class="add-member-btn" onclick="addMember(this)">＋ メンバーを追加</button>
+      </div>
+    </div>
+
+  </div><!-- /cars-grid -->
+
+  <!-- ルートメモ -->
+  <div style="margin-top:var(--gap-lg);background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1.5rem;" class="fade-in">
+    <h3 style="font-family:var(--font-serif);font-size:1rem;color:var(--color-primary);margin-bottom:1rem;letter-spacing:0.08em;">🗺️ ルート情報</h3>
+    <div class="editable" contenteditable="false" style="font-size:0.88rem;color:var(--color-text-light);line-height:1.9;">
+      【Day 1】大学 → 草津温泉（高速利用・約XX時間）<br>
+      草津温泉 → 北軽井沢山荘（約1時間）<br><br>
+      【Day 2】北軽井沢山荘 → 軽井沢（約XX分）<br>
+      軽井沢 → 大学（高速利用・約XX時間）
+    </div>
+  </div>
+
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-logo editable" contenteditable="false">少林寺拳法部</div>
+  <div class="footer-sub editable" contenteditable="false">追い出しコンパ 2026 — 草津温泉 &amp; 軽井沢</div>
+  <button class="footer-login-btn">🔒 Login</button>
+  <p class="footer-copyright">© 2026 Shorinji Kempo Club. All rights reserved.</p>
+</footer>
+
+<div class="modal-overlay">
+  <div class="modal-box">
+    <h2 class="modal-title">🔐 管理者ログイン</h2>
+    <p class="modal-sub">パスワードを入力してください</p>
+    <input type="password" class="modal-input" placeholder="パスワード">
+    <button class="modal-submit">ログイン</button>
+    <p class="modal-error"></p>
+    <p class="modal-close">キャンセル</p>
+  </div>
+</div>
+
+<div class="edit-bar">
+  <span class="edit-bar-label">✎ 編集モード</span>
+  <button class="edit-btn primary" id="save-btn">💾 保存</button>
+  <button class="edit-btn" id="clear-btn">🗑 リセット</button>
+  <button class="edit-btn danger" id="logout-btn">ログアウト</button>
+</div>
+
+<div class="text-toolbar" id="text-toolbar">
+  <select id="tb-font">
+    <option value="'Noto Sans JP', sans-serif">ゴシック</option>
+    <option value="'Shippori Mincho', serif">明朝</option>
+    <option value="'Cormorant Garamond', serif">英字Serif</option>
+    <option value="Georgia, serif">Georgia</option>
+  </select>
+  <input type="number" id="tb-size" min="8" max="80" value="16">
+  <input type="color" id="tb-color" value="#2d2d2d">
+  <button class="edit-btn" id="tb-bold"><b>B</b></button>
+  <button class="edit-btn" id="tb-italic"><i>I</i></button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/editor.js"></script>
+<script>
+  /* ─── メンバー追加 ─── */
+  function addMember(btn) {
+    if (!document.body.classList.contains('edit-mode-on')) return;
+    const list = btn.previousElementSibling;
+    const newMember = document.createElement('div');
+    newMember.className = 'car-member';
+    newMember.innerHTML = `
+      <span class="car-member-icon">▶</span>
+      <span class="member-name editable" contenteditable="true">名前（学年）</span>
+      <button class="del-member-btn" onclick="removeMember(this)">✕</button>
+    `;
+    list.appendChild(newMember);
+    const nameEl = newMember.querySelector('.member-name');
+    nameEl.focus();
+    // テキストを全選択
+    const range = document.createRange();
+    range.selectNodeContents(nameEl);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+  }
+
+  /* ─── メンバー削除 ─── */
+  function removeMember(btn) {
+    if (!document.body.classList.contains('edit-mode-on')) return;
+    const member = btn.closest('.car-member');
+    if (confirm('このメンバーを削除しますか？')) {
+      member.remove();
+    }
+  }
+</script>
+</body>
+</html>

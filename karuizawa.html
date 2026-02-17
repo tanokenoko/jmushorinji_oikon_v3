@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>軽井沢 — 少林寺拳法部 追いコン 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-body">
+
+<!-- ═══════════════════════════════════════
+     ナビゲーション
+════════════════════════════════════════ -->
+<nav class="site-nav">
+  <div class="nav-logo">
+    少林寺拳法部
+    <span>追いコン 2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="kusatsu.html">草津温泉</a>
+    <a href="karuizawa.html">軽井沢</a>
+    <a href="lodging.html">宿舎</a>
+    <a href="cars.html">配車</a>
+    <a href="info.html">Info</a>
+  </div>
+  <button class="nav-hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile">
+  <a href="index.html">🏠 Home</a>
+  <a href="kusatsu.html">♨️ 草津温泉</a>
+  <a href="karuizawa.html">🌿 軽井沢</a>
+  <a href="lodging.html">🏡 宿舎</a>
+  <a href="cars.html">🚗 配車</a>
+  <a href="info.html">ℹ️ Info</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ページヒーロー（メイン画像）
+════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="img-edit-wrapper" style="position:absolute;inset:0;">
+    <div class="page-hero-bg" id="karuizawa-hero-bg" data-bg-id="karuizawa_hero"
+         style="background-image:url('images/karuizawa/hero.jpg')"></div>
+    <button class="img-change-btn" data-target-id="karuizawa_hero" data-is-bg="true">
+      📷 メイン画像を変更
+    </button>
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <span class="page-hero-eyebrow editable" contenteditable="false">Day 2 — Karuizawa</span>
+    <h1 class="page-hero-title">
+      <span class="editable" contenteditable="false">🌿 軽井沢</span>
+    </h1>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     地図画像
+════════════════════════════════════════ -->
+<div class="map-section fade-in">
+  <p class="map-section-title">軽井沢 エリアマップ</p>
+  <div class="map-img-wrapper img-edit-wrapper">
+    <img src="images/karuizawa/map.jpg" alt="軽井沢 地図" id="karuizawa-map" class="img-placeholder">
+    <button class="img-change-btn" data-target-id="karuizawa-map" data-is-bg="false">
+      📷 地図画像を変更
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     観光地カード
+════════════════════════════════════════ -->
+<div class="cards-section">
+
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Sightseeing</span>
+    <h2 class="section-title editable" contenteditable="false">軽井沢 観光スポット</h2>
+    <div class="section-divider"></div>
+    <p style="margin-top:0.8rem;font-size:0.88rem;color:var(--color-text-light);" class="editable" contenteditable="false">
+      避暑地として名高い軽井沢。3つのエリアのおすすめスポットを紹介します。
+    </p>
+  </div>
+
+  <!-- ─────────────── 旧軽井沢 ─────────────── -->
+  <div class="category-header fade-in">
+    <h3 class="category-title">旧軽井沢</h3>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- 旧軽井沢銀座 -->
+    <div class="card fade-in" data-href="https://karuizawa-ginza.org/">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/ginza.jpg" alt="旧軽井沢銀座" id="karuizawa-img-01" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="karuizawa-img-01" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">旧軽井沢銀座</h3>
+        <p class="card-desc editable" contenteditable="false">軽井沢を代表するショッピングストリート。おしゃれなカフェ、ベーカリー、ショップが立ち並ぶ人気エリア。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">無料（店舗により異なる）</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">店舗により異なる</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 旧三笠ホテル -->
+    <div class="card fade-in" data-href="https://www.town.karuizawa.nagano.jp/kankou/rekishi/mikasa-hotel.html">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/mikasa.jpg" alt="旧三笠ホテル" id="karuizawa-img-02" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="karuizawa-img-02" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">旧三笠ホテル</h3>
+        <p class="card-desc editable" contenteditable="false">明治42年築の国指定重要文化財。西洋建築と日本の伝統技術が融合した歴史的建築物を見学できます。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">一般 400円</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">9:00〜17:00（月曜休）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 軽井沢レイクガーデン -->
+    <div class="card fade-in" data-href="https://www.karuizawa-lakegarden.jp/">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/lakegarden.jpg" alt="軽井沢レイクガーデン" id="karuizawa-img-03" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="karuizawa-img-03" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">軽井沢レイクガーデン</h3>
+        <p class="card-desc editable" contenteditable="false">高原の清々しい空気の中に広がるイングリッシュガーデン。250種類以上のバラが咲き誇ります。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">大人 1,200円</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">9:00〜18:00（季節により）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /旧軽井沢 -->
+
+  <!-- ─────────────── 中軽井沢 ─────────────── -->
+  <div class="category-header fade-in">
+    <h3 class="category-title">中軽井沢</h3>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- ハルニレテラス -->
+    <div class="card fade-in" data-href="https://www.hoshino-area.jp/harniretarace/">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/harunire.jpg" alt="ハルニレテラス" id="karuizawa-img-04" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="karuizawa-img-04" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">ハルニレテラス</h3>
+        <p class="card-desc editable" contenteditable="false">星野リゾートが手掛けるオープンモール。川沿いのハルニレの木々に囲まれた、おしゃれなカフェや雑貨店が集まるエリア。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">無料（店舗により異なる）</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">11:00〜19:00（店舗による）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 雲場池 -->
+    <div class="card fade-in" data-href="https://www.karuizawa-kankokyokai.jp/sightseeing/detail.php?id=45">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/kumoba.jpg" alt="雲場池" id="karuizawa-img-05" class="img-placeholder">
+        <span class="card-badge editable" contenteditable="false">無料</span>
+        <button class="img-change-btn" data-target-id="karuizawa-img-05" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">雲場池（スワンレイク）</h3>
+        <p class="card-desc editable" contenteditable="false">別名スワンレイク。白鳥が優雅に泳ぐ静謐な池。水面に映り込む木々の景色は息をのむ美しさです。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">無料</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">24時間（散策自由）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /中軽井沢 -->
+
+  <!-- ─────────────── 新軽井沢 ─────────────── -->
+  <div class="category-header fade-in">
+    <h3 class="category-title">新軽井沢（アウトレット周辺）</h3>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- 軽井沢プリンスショッピングプラザ -->
+    <div class="card fade-in" data-href="https://www.karuizawa-psp.jp/">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/outlet.jpg" alt="軽井沢プリンスショッピングプラザ" id="karuizawa-img-06" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="karuizawa-img-06" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">軽井沢プリンスショッピングプラザ</h3>
+        <p class="card-desc editable" contenteditable="false">国内最大級のアウトレットモール。200以上のブランドショップが並ぶ大型ショッピング施設。浅間山を背景に広大な敷地で快適に楽しめます。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">無料（ショッピングは別途）</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">10:00〜19:00（季節により）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 軽井沢タリアセン -->
+    <div class="card fade-in" data-href="https://www.karuizawa-taliesin.com/">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/taliesin.jpg" alt="軽井沢タリアセン" id="karuizawa-img-07" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="karuizawa-img-07" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">軽井沢タリアセン</h3>
+        <p class="card-desc editable" contenteditable="false">塩沢湖を中心とした総合リゾート施設。美術館、アトラクション、カフェが充実。湖畔を散策するだけでも絵になる景色が広がります。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">大人 800円</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">9:00〜17:00</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 軽井沢絵本の森美術館 -->
+    <div class="card fade-in" data-href="https://www.picturebook-museum.com/">
+      <div class="card-img img-edit-wrapper">
+        <img src="images/karuizawa/museum.jpg" alt="軽井沢絵本の森美術館" id="karuizawa-img-08" class="img-placeholder">
+        <button class="img-change-btn" data-target-id="karuizawa-img-08" data-is-bg="false">
+          📷 画像を変更
+        </button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name editable" contenteditable="false">軽井沢絵本の森美術館</h3>
+        <p class="card-desc editable" contenteditable="false">ヨーロッパと日本の絵本原画を展示する美術館。英国式庭園に囲まれた優雅な空間で、大人でも楽しめる芸術の世界へ。</p>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <span class="card-meta-icon">💰</span>
+            <span class="editable" contenteditable="false">大人 1,200円</span>
+          </div>
+          <div class="card-meta-item">
+            <span class="card-meta-icon">🕐</span>
+            <span class="editable" contenteditable="false">9:30〜17:00（火曜休）</span>
+          </div>
+        </div>
+        <div class="card-link-hint">
+          詳しく見る →
+          <button class="link-edit-btn">🔗 URL変更</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /新軽井沢 -->
+
+</div><!-- /cards-section -->
+
+<!-- ═══════════════════════════════════════
+     フッター
+════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-logo editable" contenteditable="false">少林寺拳法部</div>
+  <div class="footer-sub editable" contenteditable="false">追い出しコンパ 2026 — 草津温泉 &amp; 軽井沢</div>
+  <button class="footer-login-btn">🔒 Login</button>
+  <p class="footer-copyright">© 2026 Shorinji Kempo Club. All rights reserved.</p>
+</footer>
+
+<div class="modal-overlay">
+  <div class="modal-box">
+    <h2 class="modal-title">🔐 管理者ログイン</h2>
+    <p class="modal-sub">パスワードを入力してください</p>
+    <input type="password" class="modal-input" placeholder="パスワード">
+    <button class="modal-submit">ログイン</button>
+    <p class="modal-error"></p>
+    <p class="modal-close">キャンセル</p>
+  </div>
+</div>
+
+<div class="edit-bar">
+  <span class="edit-bar-label">✎ 編集モード</span>
+  <button class="edit-btn primary" id="save-btn">💾 保存</button>
+  <button class="edit-btn" id="clear-btn">🗑 リセット</button>
+  <button class="edit-btn danger" id="logout-btn">ログアウト</button>
+</div>
+
+<div class="text-toolbar" id="text-toolbar">
+  <select id="tb-font">
+    <option value="'Noto Sans JP', sans-serif">ゴシック</option>
+    <option value="'Shippori Mincho', serif">明朝</option>
+    <option value="'Cormorant Garamond', serif">英字Serif</option>
+    <option value="Georgia, serif">Georgia</option>
+  </select>
+  <input type="number" id="tb-size" min="8" max="80" value="16">
+  <input type="color" id="tb-color" value="#2d2d2d">
+  <button class="edit-btn" id="tb-bold"><b>B</b></button>
+  <button class="edit-btn" id="tb-italic"><i>I</i></button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>
